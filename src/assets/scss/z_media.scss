@@ -1,0 +1,17 @@
+@media(max-width: 768px) {
+    .moving__box,
+    .assembly__box {
+        grid-template-columns: 1fr;
+    }
+    .moving__title{
+        text-align: center;
+    }
+}
+@media(max-width: 425px) {
+    .footer {
+        margin-bottom: 50px;
+    }
+    .btnFixedWrapper{
+        display: block;
+    }
+}

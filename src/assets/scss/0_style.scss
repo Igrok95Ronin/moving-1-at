@@ -62,6 +62,6 @@ $titleh2Color : #0078c8;
 @mixin h2Title {
     font-weight: 600;
     color: $titleh2Color;
-    font-size: 32px;
+    font-size: clamp(24px, 5vw, 32px);
     margin: 20px 0;
 }

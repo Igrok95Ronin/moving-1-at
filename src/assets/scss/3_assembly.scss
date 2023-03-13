@@ -21,7 +21,7 @@
     @include h2Title;
     color: #fff;
     text-align: center;
-    font-size: 28px;
+    font-size: clamp(24px, 5vw, 28px);
 }
 .forms__button {
     @include btn;
