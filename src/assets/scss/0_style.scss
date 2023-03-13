@@ -20,7 +20,7 @@ body{
     font: 16px Helvetica,Arial,sans-serif;
     max-width: 1920px;
     min-width: 320px;
-    color: #7a7a7a;
+    color: #000;
 }
 
 $colorMain : #17a2b8;
@@ -51,10 +51,17 @@ $titleh2Color : #0078c8;
     }
     &:hover{
         color: #fff;
+        background-color: #c02131;
         span{
             &::before{
                 background-image: url("../icons/telephone-fill.svg");
             }
         }
     }
+}
+@mixin h2Title {
+    font-weight: 600;
+    color: $titleh2Color;
+    font-size: 32px;
+    margin: 20px 0;
 }

@@ -23,6 +23,7 @@
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    border-radius: 0 0 5px 5px;
 }
 .moving__dscr {
     font-size: 22px;
@@ -35,10 +36,7 @@
 .moving__right {
 }
 .moving__title {
-    font-weight: 600;
-    color: $titleh2Color;
-    font-size: 32px;
-    margin: 20px 0;
+ @include h2Title;
 }
 .moving__txt {
     line-height: 20px;

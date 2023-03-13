@@ -1,0 +1,51 @@
+.assembly {
+    margin: 50px 0;
+}
+.assembly__box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.assembly__left {
+    background-color: $colorMain;
+    border-radius: 5px;
+}
+.forms {
+    margin-bottom: 20px;
+}
+.forms__wrapper {
+}
+.forms__box {
+}
+.forms__title {
+    @include h2Title;
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+}
+.forms__button {
+    @include btn;
+}
+.assembly__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+}
+.wrapperList {
+    font-size: 25px;
+    line-height: 45px;
+    font-weight: 700;
+}
+.assembly__list {
+}
+.assembly__imgWrap {
+    max-width: 100%;
+    max-height: 100%;
+}
+.assembly__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
