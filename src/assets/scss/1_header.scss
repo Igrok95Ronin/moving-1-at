@@ -1,0 +1,12 @@
+.header {
+    background-color: $colorMain;
+}
+.header__box {
+}
+.header__title {
+    font-size: clamp(32px, 5vw, 60px);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px 0;
+}
