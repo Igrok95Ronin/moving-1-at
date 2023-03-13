@@ -1,11 +1,11 @@
 <?php
-$site_data      = json_decode(file_get_contents('http://templates.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
+$site_data      = json_decode(file_get_contents('http://local.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
 
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Umzugsfirma in'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? ''));
 
 $title = $text . ' ' . $city;
 ?>
@@ -33,7 +33,7 @@ $title = $text . ' ' . $city;
             <div class="row">
                 <div class="col-12 container">
                     <div class="header__box">
-                        <h1 class="header__title">Umzugsfirma in +der Nähe+</h1>
+                        <h1 class="header__title"><?= $text ?> <?= $city == '' ? 'der Nähe' : $city ?></h1>
                     </div>
                 </div>
             </div>
@@ -53,13 +53,13 @@ $title = $text . ' ' . $city;
                                 </div>
                                 <div class="moving__leftBottom">
                                     <p class="moving__dscr">✓ Kostenlose Besichtigung</p>
-                                    <a class="moving__btn" href="#"><span>111222333</span></a>
+                                    <a class="moving__btn" href="<?= $phone_href ?>"><span><?= $phone_name ?></span></a>
                                 </div>
                             </div>
 
                             <div class="moving__right">
-                                <h2 class="moving__title">Umzugsfirma in +der Nähe+ gesucht? Wir sind hier, um Ihnen zu helfen!</h2>
-                                <p class="moving__txt">Planen Sie einen <b>Umzug in +der Nähe+</b> und suchen nach einer zuverlässigen <b>Umzugsfirma</b>? Wir sind für Sie da! Unser erfahrenes Team bietet eine breite Palette von Dienstleistungen, darunter <b>Planung, Verpackung, Transport</b> und Entladung. Kontaktieren Sie uns für ein Angebot und erleben Sie einen stressfreien Umzug!</p>
+                                <h2 class="moving__title">Umzugsfirma in <?= $city == '' ? 'der Nähe' : $city ?> gesucht? Wir sind hier, um Ihnen zu helfen!</h2>
+                                <p class="moving__txt">Planen Sie einen <b>Umzug in <?= $city == '' ? 'der Nähe' : $city ?></b> und suchen nach einer zuverlässigen <b>Umzugsfirma</b>? Wir sind für Sie da! Unser erfahrenes Team bietet eine breite Palette von Dienstleistungen, darunter <b>Planung, Verpackung, Transport</b> und Entladung. Kontaktieren Sie uns für ein Angebot und erleben Sie einen stressfreien Umzug!</p>
                                 <div class="moving__commit">
                                     <div class="moving__commitT">
                                         <img class="moving__imgCommit" src="./assets/img/bad6.jpg" alt="">
@@ -148,8 +148,8 @@ $title = $text . ' ' . $city;
                 <div class='row'>
                     <div class='col-12 container'>
                         <div class='assistant__box'>
-                            <h2 class="assistant__title">Sorgenfreier Umzug mit unseren Profis ++</h2>
-                            <p class="assistant__txt">Planen Sie einen <b>Umzug in +Ihrer Nähe+</b> und suchen nach einer professionellen <b>Umzugsfirma</b>, die Ihnen dabei helfen kann? Wir sind hier, um Ihnen den Stress und die Belastung eines Umzugs abzunehmen. Unser erfahrenes Team kümmert sich um alle Aspekte Ihres Umzugs, von der Planung und Organisation bis hin zum Transport Ihrer Möbel und Gegenstände. Wir sind stolz darauf, pünktliche, sichere und effiziente Umzüge zu bieten, und wir arbeiten hart daran, sicherzustellen, dass jeder Umzug so reibungslos wie möglich verläuft. Mit unseren Profis an Ihrer Seite können Sie sich zurücklehnen und entspannen, während wir alles für Sie erledigen. Kontaktieren Sie uns noch heute, um ein Angebot zu erhalten und einen sorgenfreien Umzug mit unseren <b>Profis in +Ihrer Nähe+</b> zu planen!</p>
+                            <h2 class="assistant__title">Sorgenfreier Umzug mit unseren Profis <?= $city ?></h2>
+                            <p class="assistant__txt">Planen Sie einen <b>Umzug in <?= $city == '' ? 'Ihrer Nähe' : $city ?> </b> und suchen nach einer professionellen <b>Umzugsfirma</b>, die Ihnen dabei helfen kann? Wir sind hier, um Ihnen den Stress und die Belastung eines Umzugs abzunehmen. Unser erfahrenes Team kümmert sich um alle Aspekte Ihres Umzugs, von der Planung und Organisation bis hin zum Transport Ihrer Möbel und Gegenstände. Wir sind stolz darauf, pünktliche, sichere und effiziente Umzüge zu bieten, und wir arbeiten hart daran, sicherzustellen, dass jeder Umzug so reibungslos wie möglich verläuft. Mit unseren Profis an Ihrer Seite können Sie sich zurücklehnen und entspannen, während wir alles für Sie erledigen. Kontaktieren Sie uns noch heute, um ein Angebot zu erhalten und einen sorgenfreien Umzug mit unseren <b>Profis in <?= $city == '' ? 'Ihrer Nähe' : $city ?></b> zu planen!</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ $title = $text . ' ' . $city;
                     <div class='col-12 container'>
                         <div class='assistant__box'>
                             <h2 class="assistant__title">Preiswerte Umzüge - Qualität ist unser Versprechen</h2>
-                            <p class="assistant__txt">Wenn Sie einen preiswerten <b>Umzug</b> mit hoher <b>Qualität</b> suchen, sind wir die richtige Wahl für Sie! Unsere <b>Umzugsfirma ++</b> bietet erschwingliche Umzugsdienstleistungen, ohne Kompromisse bei der Qualität einzugehen. Wir arbeiten hart daran, sicherzustellen, dass jeder Umzug so reibungslos und stressfrei wie möglich verläuft und dass unsere Kunden mit unserem Service zufrieden sind. Kontaktieren Sie uns noch heute, um ein Angebot zu erhalten und einen <b>preiswerten</b>, qualitativ hochwertigen <b>Umzug</b> mit uns zu planen!</p>
+                            <p class="assistant__txt">Wenn Sie einen preiswerten <b>Umzug</b> mit hoher <b>Qualität</b> suchen, sind wir die richtige Wahl für Sie! Unsere <b>Umzugsfirma <?= $city ?></b> bietet erschwingliche Umzugsdienstleistungen, ohne Kompromisse bei der Qualität einzugehen. Wir arbeiten hart daran, sicherzustellen, dass jeder Umzug so reibungslos und stressfrei wie möglich verläuft und dass unsere Kunden mit unserem Service zufrieden sind. Kontaktieren Sie uns noch heute, um ein Angebot zu erhalten und einen <b>preiswerten</b>, qualitativ hochwertigen <b>Umzug</b> mit uns zu planen!</p>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@ $title = $text . ' ' . $city;
                     <div class='col-12 container'>
                         <div class='assistant__box'>
                             <h2 class="assistant__title">Wir bringen Sie in Ihr neues Zuhause</h2>
-                            <p class="assistant__txt">Als <b>Umzugsfirma ++</b> sind wir darauf spezialisiert, Ihre Habseligkeiten sicher und effizient in Ihr neues Zuhause zu bringen. Wir verstehen, dass ein <b>Umzug</b> eine stressige Erfahrung sein kann und unser Ziel ist es, Ihnen den Prozess so angenehm wie möglich zu gestalten. Unsere erfahrenen Mitarbeiter werden sorgfältig mit Ihrem Eigentum umgehen und es sicher an den Zielort transportieren. Wir kümmern uns um alle Aspekte des Umzugs, einschließlich <b>Verpackung, Transport</b> und Entladung. Mit unserem engagierten Team können Sie sicher sein, dass Sie in kürzester Zeit in Ihrem neuen Zuhause angekommen sind.</p>
+                            <p class="assistant__txt">Als <b>Umzugsfirma <?= $city ?></b> sind wir darauf spezialisiert, Ihre Habseligkeiten sicher und effizient in Ihr neues Zuhause zu bringen. Wir verstehen, dass ein <b>Umzug</b> eine stressige Erfahrung sein kann und unser Ziel ist es, Ihnen den Prozess so angenehm wie möglich zu gestalten. Unsere erfahrenen Mitarbeiter werden sorgfältig mit Ihrem Eigentum umgehen und es sicher an den Zielort transportieren. Wir kümmern uns um alle Aspekte des Umzugs, einschließlich <b>Verpackung, Transport</b> und Entladung. Mit unserem engagierten Team können Sie sicher sein, dass Sie in kürzester Zeit in Ihrem neuen Zuhause angekommen sind.</p>
                         </div>
                     </div>
                 </div>
@@ -184,15 +184,15 @@ $title = $text . ' ' . $city;
                 <div class='row'>
                     <div class='col-12 container'>
                         <div class='assistant__box'>
-                            <h2 class="assistant__title">Wir packen an - Ihr zuverlässiger Umzugshelfer ++</h2>
-                            <p class="assistant__txt">Als <b>zuverlässiger Umzugshelfer ++</b> packen wir gerne mit an, um Ihnen den Umzug so stressfrei wie möglich zu gestalten. Unsere erfahrenen Mitarbeiter sind darauf spezialisiert, Ihre Habseligkeiten sicher und effizient zu verpacken und zu transportieren. Wir kümmern uns um alle Aspekte des Umzugs, einschließlich Verpackung, Demontage und Montage von Möbeln sowie Transport und Entladung. Mit unserem engagierten Team können Sie sicher sein, dass Ihr Umzug reibungslos abläuft und Ihre Sachen sicher und unbeschädigt an den Zielort kommen. Wir sind stolz darauf, Ihnen als vertrauenswürdiger Umzugshelfer zur Seite zu stehen und Ihnen dabei zu helfen, in Ihrem neuen Zuhause anzukommen.</p>
+                            <h2 class="assistant__title">Wir packen an - Ihr zuverlässiger Umzugshelfer <?= $city ?></h2>
+                            <p class="assistant__txt">Als <b>zuverlässiger Umzugshelfer <?= $city ?></b> packen wir gerne mit an, um Ihnen den Umzug so stressfrei wie möglich zu gestalten. Unsere erfahrenen Mitarbeiter sind darauf spezialisiert, Ihre Habseligkeiten sicher und effizient zu verpacken und zu transportieren. Wir kümmern uns um alle Aspekte des Umzugs, einschließlich Verpackung, Demontage und Montage von Möbeln sowie Transport und Entladung. Mit unserem engagierten Team können Sie sicher sein, dass Ihr Umzug reibungslos abläuft und Ihre Sachen sicher und unbeschädigt an den Zielort kommen. Wir sind stolz darauf, Ihnen als vertrauenswürdiger Umzugshelfer zur Seite zu stehen und Ihnen dabei zu helfen, in Ihrem neuen Zuhause anzukommen.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class='btnFixedWrapper'>
-            <a class="btnFixed" href="#"><span>111222333</span></a>
+            <a class="btnFixed" href="<?= $phone_href ?>"><span><?= $phone_name ?></span></a>
         </section>
     </main>
     <!--Нижний колонтитул страницы-->
