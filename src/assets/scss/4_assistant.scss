@@ -1,0 +1,12 @@
+.assistant {
+    margin: 30px 0;
+}
+.assistant__box {
+}
+.assistant__title {
+    @include h2Title;
+    text-align: center;
+}
+.assistant__txt {
+    line-height: 25px;
+}
