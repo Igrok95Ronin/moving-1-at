@@ -1,0 +1,71 @@
+.moving {
+}
+.moving__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.moving__left {
+    display: flex;
+    flex-direction: column;
+}
+.moving__imgWrap {
+    max-width: 100%;
+    height: 100%;
+}
+.moving__img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.moving__leftBottom {
+    background-color: $colorMain;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+.moving__dscr {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.moving__btn {
+   @include btn;
+}
+.moving__right {
+}
+.moving__title {
+    font-weight: 600;
+    color: $titleh2Color;
+    font-size: 32px;
+    margin: 20px 0;
+}
+.moving__txt {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.moving__commit {
+    border: 1px solid #000;
+    padding: 10px;
+    background-color: #eaf9ed;
+}
+.moving__commitT {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.moving__imgCommit {
+    border-radius: 50%;
+}
+.moving__nameW {
+}
+.moving__name {
+    font-size: 18px;
+    font-weight: 700;
+}
+.moving__star {
+}
+.moving__message {
+    margin-top: 10px;
+    line-height: 20px;
+}

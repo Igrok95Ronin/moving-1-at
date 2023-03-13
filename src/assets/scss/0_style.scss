@@ -25,3 +25,36 @@ body{
 
 $colorMain : #17a2b8;
 $btn : #dc3545;
+$titleh2Color : #0078c8;
+
+@mixin btn {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background-color: $btn;
+    padding: 10px 20px 10px 50px;
+    span{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url("../icons/telephone.svg");
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &:hover{
+        color: #fff;
+        span{
+            &::before{
+                background-image: url("../icons/telephone-fill.svg");
+            }
+        }
+    }
+}
